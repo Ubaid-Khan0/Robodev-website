@@ -45,6 +45,7 @@
       setTimeout(() => {
         ideaIndex = (ideaIndex + 1) % ideas.length;
         rotatingIdea.textContent = ideas[ideaIndex];
+        rotatingIdea.classList.toggle('future-idea', ideas[ideaIndex] === 'Invent the future.');
         rotatingIdea.classList.remove('is-changing');
       }, 300);
     }, 3200);
