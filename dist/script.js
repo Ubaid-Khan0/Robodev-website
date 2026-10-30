@@ -38,7 +38,7 @@
   }
   const rotatingIdea = document.querySelector('.rotating-idea');
   if (rotatingIdea && !reduced) {
-    const ideas = ['Build the circuit.', 'Code the behavior.', 'Test the sensor.', 'Power the idea.', 'Debug the design.', 'Invent the future.'];
+    const ideas = ['Build the circuit.', 'Code the behavior.', 'Power the idea.', 'Debug the design.', 'Invent the future.'];
     let ideaIndex = 0;
     setInterval(() => {
       rotatingIdea.classList.add('is-changing');
