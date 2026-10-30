@@ -109,9 +109,10 @@ h1,h2,h3{font-weight:700}
 .electron-path{position:absolute;z-index:2;left:50%;top:50%;pointer-events:none;transform-origin:center}
 .electron-path span{position:absolute;width:10px;height:10px;border-radius:50%;background:var(--cyan);box-shadow:0 0 8px var(--cyan),0 0 20px color-mix(in srgb,var(--cyan) 75%,transparent);offset-path:ellipse(50% 50% at 50% 50%);animation:electronTravel 7s linear infinite!important}
 .electron-path-a{width:72%;height:72%;transform:translate(-50%,-50%)}
-.electron-path-b{width:94%;height:44%;transform:translate(-50%,-50%) rotate(-25deg)}
+.electron-path-b{width:94%;height:44%;animation:electronPathTilt 11s ease-in-out infinite!important}
 .electron-path-b span{animation-duration:9s!important;animation-direction:reverse!important;background:var(--amber);box-shadow:0 0 8px var(--amber),0 0 20px color-mix(in srgb,var(--amber) 70%,transparent)}
 @keyframes electronTravel{from{offset-distance:0%}to{offset-distance:100%}}
+@keyframes electronPathTilt{0%,100%{transform:translate(-50%,-50%) rotate(-25deg) scale(1)}50%{transform:translate(-50%,-50%) rotate(-18deg) scale(1.04)}}
 @media(max-width:600px){.hero-visual .core{width:145px;height:145px}.hero-visual .core img{width:122px;height:122px}.electron-path span{width:8px;height:8px}}
 
 /* Neutral grey light-theme surfaces */
