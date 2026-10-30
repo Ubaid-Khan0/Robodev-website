@@ -165,6 +165,14 @@
   }
   const microcopy = document.querySelector('.microcopy');
   if (microcopy) microcopy.textContent = 'A learning product by Nexum Global Solutions.';
+  const calendlyUrl = 'https://calendly.com/ubaid102020/30min';
+  document.querySelectorAll('.nav-actions .button-small').forEach((button) => {
+    button.href = calendlyUrl;
+    button.target = '_blank';
+    button.rel = 'noopener';
+    button.textContent = 'Book a demo';
+    button.setAttribute('aria-label', 'Book a 30-minute demo meeting');
+  });
   if (!document.querySelector('.ambient-runner')) document.body.insertAdjacentHTML('afterbegin','<div class="ambient-runner" aria-hidden="true"></div>');
   if (pageName === 'index.html') {
     [['.product-card.app','application.html','Explore RoboDevLearn Application'],['.product-card.book','book.html','Explore RoboDevLearn Book'],['.product-card.kit','kit.html','Explore RoboDevLearn Kit']].forEach(([selector, href, label]) => {
@@ -179,7 +187,7 @@
     const currentPage = location.pathname.split('/').pop() || 'index.html';
     navLinks.innerHTML = `<a href="features.html"${currentPage === 'features.html' ? ' aria-current="page"' : ''}>Features</a><a href="projects.html"${currentPage === 'projects.html' ? ' aria-current="page"' : ''}>Projects</a><a href="pricing.html"${currentPage === 'pricing.html' ? ' aria-current="page"' : ''}>Pricing</a><a href="blogs.html"${currentPage === 'blogs.html' ? ' aria-current="page"' : ''}>Blogs</a><a href="about.html"${currentPage === 'about.html' ? ' aria-current="page"' : ''}>About</a>`;
     const footerLinks = document.querySelector('.inner-footer-links');
-    if (footerLinks) footerLinks.innerHTML = `<a href="features.html">Features</a><a href="projects.html">Projects</a><a href="pricing.html"${currentPage === 'pricing.html' ? ' aria-current="page"' : ''}>Pricing</a><a href="blogs.html">Blogs</a><a href="about.html">About</a><a href="contact.html">Contact</a>`;
+    if (footerLinks) footerLinks.innerHTML = `<a href="features.html">Features</a><a href="projects.html">Projects</a><a href="pricing.html"${currentPage === 'pricing.html' ? ' aria-current="page"' : ''}>Pricing</a><a href="blogs.html">Blogs</a><a href="about.html">About</a><a href="contact.html">Contact</a><a href="${calendlyUrl}" target="_blank" rel="noopener">Book a demo ↗</a>`;
     const toggle = document.createElement('button');
     toggle.className = 'mobile-toggle'; toggle.type = 'button'; toggle.setAttribute('aria-expanded','false'); toggle.setAttribute('aria-label','Open navigation'); toggle.innerHTML = '<span></span><span></span><span></span>';
     nav.insertBefore(toggle, nav.querySelector('.nav-actions'));
