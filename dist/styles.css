@@ -103,6 +103,23 @@ h1,h2,h3{font-weight:700}
 }
 @media(max-width:600px){.hero-visual{--card-orbit-radius:clamp(125px,36vw,145px)}.hero-visual .float-card{width:108px}}
 
+/* Expanded logo atom with animated electrons */
+.hero-visual .core{z-index:2;width:190px;height:190px}
+.hero-visual .core img{width:158px;height:158px;margin:auto}
+.orbit-three{width:86%;height:56%;transform:rotate(32deg);border-color:color-mix(in srgb,var(--blue) 30%,var(--line))}
+.orbit-four{width:55%;height:92%;transform:rotate(68deg);border-color:color-mix(in srgb,var(--cyan) 24%,var(--line))}
+.electron-path{position:absolute;z-index:2;left:50%;top:50%;pointer-events:none;transform-origin:center}
+.electron-path span{position:absolute;width:10px;height:10px;border-radius:50%;background:var(--cyan);box-shadow:0 0 8px var(--cyan),0 0 20px color-mix(in srgb,var(--cyan) 75%,transparent);offset-path:ellipse(50% 50% at 50% 50%);animation:electronTravel 7s linear infinite!important}
+.electron-path-a{width:72%;height:72%;transform:translate(-50%,-50%)}
+.electron-path-b{width:94%;height:44%;transform:translate(-50%,-50%) rotate(-25deg)}
+.electron-path-b span{animation-duration:9s!important;animation-direction:reverse!important;background:var(--amber);box-shadow:0 0 8px var(--amber),0 0 20px color-mix(in srgb,var(--amber) 70%,transparent)}
+.electron-path-c{width:86%;height:56%;transform:translate(-50%,-50%) rotate(32deg)}
+.electron-path-c span{animation-duration:11s!important;animation-delay:-4s!important;background:var(--blue);box-shadow:0 0 8px var(--blue),0 0 20px color-mix(in srgb,var(--blue) 70%,transparent)}
+.electron-path-d{width:55%;height:92%;transform:translate(-50%,-50%) rotate(68deg)}
+.electron-path-d span{animation-duration:8s!important;animation-delay:-2s!important}
+@keyframes electronTravel{from{offset-distance:0%}to{offset-distance:100%}}
+@media(max-width:600px){.hero-visual .core{width:145px;height:145px}.hero-visual .core img{width:122px;height:122px}.electron-path span{width:8px;height:8px}}
+
 /* Neutral grey light-theme surfaces */
 [data-theme="light"] .field input,[data-theme="light"] .field select,[data-theme="light"] .field textarea{background:var(--panel)}
 [data-theme="light"] .journey .step-icon{background:linear-gradient(145deg,#edf2f6,#d2dee8)!important}
