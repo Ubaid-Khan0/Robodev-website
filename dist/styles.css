@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap');
 :root{--bg:#07111f;--bg2:#0a1728;--panel:#0e1c2e;--panel2:#12243a;--text:#f2f7fb;--muted:#9eb0c2;--line:rgba(137,180,211,.18);--cyan:#48e5f5;--blue:#3f7cff;--amber:#ffc857;--shadow:0 24px 70px rgba(0,0,0,.3);--header:rgba(7,17,31,.78)}
 [data-theme="light"]{--bg:#f8fbff;--bg2:#eaf2ff;--panel:#ffffff;--panel2:#dceaff;--text:#0b2038;--muted:#405a74;--line:rgba(31,72,116,.3);--cyan:#0b63ce;--blue:#1d4ed8;--amber:#9c4f00;--shadow:0 20px 55px rgba(25,70,120,.16);--header:rgba(248,251,255,.94)}
 [data-theme="light"] .waitlist-section{background:linear-gradient(120deg,#dff5ff,#eef8ff 55%,#dceeff)!important;color:var(--text)!important;border-block:1px solid var(--line)}[data-theme="light"] .waitlist-copy>p:last-child{color:var(--muted)!important}[data-theme="light"] .waitlist-form{background:#fff!important;border-color:var(--line)!important;box-shadow:var(--shadow)}[data-theme="light"] .waitlist-form label{color:var(--cyan)!important}[data-theme="light"] .input-row input{background:#f7fbff!important;color:var(--text)!important;border-color:var(--line)!important}[data-theme="light"] .input-row input::placeholder{color:#61788c!important}[data-theme="light"] .form-note{color:var(--muted)!important}[data-theme="light"] footer{background:#e7f3fc!important;color:var(--text)!important;border-top:1px solid var(--line)}[data-theme="light"] .footer-inner p,[data-theme="light"] .inner-footer-links a{color:var(--muted)!important}[data-theme="light"] .footer-inner .brand{color:var(--text)!important}[data-theme="light"] .footer-bottom{border-top-color:var(--line)!important;color:#4b657a!important}[data-theme="light"] .app-screens-gallery a{background:#e9f5ff!important}
@@ -74,3 +75,29 @@
 .kit-contents-art{min-width:0;margin:0}.kit-contents-art a{display:block;overflow:hidden;border:1px solid var(--line);border-radius:16px;background:var(--panel)}
 .kit-contents-art img{display:block;width:100%;height:auto}.kit-contents-art figcaption{margin-top:.7rem;color:var(--muted);font-size:.82rem}
 @media(max-width:800px){.kit-contents-layout{grid-template-columns:1fr}}
+
+/* Refined typography and roomier featured products */
+body{font-family:"Plus Jakarta Sans",ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif}
+h1,h2,h3,.brand{font-family:"Outfit","Plus Jakarta Sans",ui-sans-serif,system-ui,sans-serif}
+h1,h2,h3{font-weight:700}
+#ecosystem{width:min(1240px,calc(100% - 40px))}
+.ecosystem-grid{gap:1.5rem}
+.product-card{padding:1.3rem;border-radius:20px}
+.product-card .product-photo-slot{border-radius:13px}
+.product-card .product-photo-slot img{min-height:285px}
+.product-card h3{font-size:1.55rem;margin:1.45rem .4rem .55rem}
+.product-card>p{font-size:.96rem;line-height:1.7;margin-bottom:.85rem}
+@media(max-width:900px){.product-card .product-photo-slot img{min-height:260px}}
+@media(max-width:600px){#ecosystem{width:min(100% - 28px,1240px)}.product-card{padding:1.05rem}.product-card .product-photo-slot img{min-height:235px}.product-card h3{font-size:1.42rem}}
+
+/* Product ideas orbit the RoboDevLearn mark */
+.hero-visual{--card-orbit-radius:clamp(155px,14vw,185px)}
+.hero-visual .float-card{left:50%;top:50%;right:auto;bottom:auto;z-index:3;will-change:transform}
+#orbit-learn{animation:productCardOrbit 15s linear 0s infinite!important}
+#orbit-understand{animation:productCardOrbit 15s linear -5s infinite!important}
+#orbit-experiment{animation:productCardOrbit 15s linear -10s infinite!important}
+@keyframes productCardOrbit{
+  from{transform:translate(-50%,-50%) rotate(0deg) translateX(var(--card-orbit-radius)) rotate(0deg)}
+  to{transform:translate(-50%,-50%) rotate(360deg) translateX(var(--card-orbit-radius)) rotate(-360deg)}
+}
+@media(max-width:600px){.hero-visual{--card-orbit-radius:clamp(125px,36vw,145px)}.hero-visual .float-card{width:108px}}
