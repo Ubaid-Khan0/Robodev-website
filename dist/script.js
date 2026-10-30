@@ -40,12 +40,20 @@
   if (rotatingIdea && !reduced) {
     const ideas = ['Build the circuit.', 'Code the behavior.', 'Debug the design.', 'Invent the future.'];
     let ideaIndex = 0;
+    const showIdea = (idea) => {
+      const words = idea.split(' ');
+      const firstLine = document.createElement('span');
+      const secondLine = document.createElement('span');
+      firstLine.className = secondLine.className = 'idea-line';
+      firstLine.textContent = words.slice(0, 2).join(' ');
+      secondLine.textContent = words.slice(2).join(' ');
+      rotatingIdea.replaceChildren(firstLine, secondLine);
+    };
     setInterval(() => {
       rotatingIdea.classList.add('is-changing');
       setTimeout(() => {
         ideaIndex = (ideaIndex + 1) % ideas.length;
-        rotatingIdea.textContent = ideas[ideaIndex];
-        rotatingIdea.classList.toggle('future-idea', ideas[ideaIndex] === 'Invent the future.');
+        showIdea(ideas[ideaIndex]);
         rotatingIdea.classList.remove('is-changing');
       }, 300);
     }, 3200);
